@@ -1,0 +1,8 @@
+﻿docs/
+docs/*.md
+.preview-logs/
+.tmp-docx-build/
+*.tmp
+.DS_Store
+Thumbs.db
+~$*.md
