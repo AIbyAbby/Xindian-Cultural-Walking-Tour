@@ -1573,6 +1573,10 @@ h3 {
   object-fit: cover;
 }
 
+.record-hero-image--focus-left img {
+  object-position: 18% center;
+}
+
 .back-home {
   display: inline-flex;
   margin-bottom: 26px;
