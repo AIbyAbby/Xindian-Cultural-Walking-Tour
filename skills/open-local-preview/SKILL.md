@@ -7,6 +7,28 @@ description: Open the local development preview in the Codex in-app browser at h
 
 Use this skill when developing the static website and the user wants to see the site in the Codex browser.
 
+## Important Limit
+
+This skill is a Markdown instruction file. It tells Codex what to do when the user asks to open the preview, but it does not run by itself when Codex or the computer starts.
+
+If the Codex app provides an in-app browser control tool, use that tool to open the URL in the sidebar browser. If that tool is not available in the current session, give the user the preview URL and ask them to paste it into the sidebar browser.
+
+## Startup Behavior
+
+Skills cannot currently force the Codex sidebar browser to open automatically on app startup by themselves.
+
+The closest supported workflow is:
+
+1. Keep the local preview server running at startup, if the environment supports it.
+2. When the user asks to open the preview, follow this skill.
+3. Open the sidebar browser to:
+
+```text
+http://localhost:8787/
+```
+
+4. If the sidebar browser is already open, reload the same URL.
+
 ## Default URL
 
 Open:
@@ -25,7 +47,7 @@ http://127.0.0.1:8787/index.html
 
 1. Check whether the local preview is reachable.
 2. If it is not reachable, restart the local preview server for the current website folder.
-3. Open the preview in the Codex in-app browser.
+3. Open the preview in the Codex in-app browser when the browser tool is available.
 4. After frontend edits, reload the same browser tab with a cache-busting query string:
 
 ```text
@@ -45,12 +67,11 @@ If the in-app browser blocks `localhost`, try `127.0.0.1`. If both are blocked b
 Use short, non-technical updates:
 
 ```text
-我幫你把右側預覽打開，這樣可以邊改邊看。
+Opening the website preview.
 ```
 
 When complete:
 
 ```text
-已打開預覽： http://localhost:8787/
+Preview is open: http://localhost:8787/
 ```
-
