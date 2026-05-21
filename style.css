@@ -2720,3 +2720,224 @@ body {
     border-radius: 12px;
   }
 }
+
+/* Final mobile reading override: keep all record/story pages in one readable column */
+@media screen and (max-width: 900px) {
+  .record-page .record-hero,
+  .story-index-page .record-hero {
+    display: block !important;
+    min-height: auto !important;
+  }
+
+  .record-page .record-hero-copy,
+  .story-index-page .record-hero-copy {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 86px 20px 34px !important;
+  }
+
+  .record-page .record-hero h1,
+  .story-index-page .record-hero h1 {
+    max-width: 100% !important;
+    font-size: clamp(1.85rem, 8.5vw, 2.7rem) !important;
+    line-height: 1.3 !important;
+    writing-mode: horizontal-tb !important;
+    word-break: normal !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .record-page .record-hero-copy p,
+  .story-index-page .record-hero-copy p {
+    max-width: 100% !important;
+    font-size: 1rem !important;
+    line-height: 1.9 !important;
+    writing-mode: horizontal-tb !important;
+  }
+
+  .record-page .record-layout {
+    display: block !important;
+    width: min(100% - 24px, 680px) !important;
+    max-width: 680px !important;
+    margin: 0 auto !important;
+    padding: 22px 0 58px !important;
+  }
+
+  .record-page .record-sidebar {
+    position: static !important;
+    top: auto !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 0 18px !important;
+    padding: 14px !important;
+    border: 1px solid rgba(45, 119, 131, 0.16) !important;
+    border-radius: 18px !important;
+    background: rgba(255, 252, 245, 0.94) !important;
+    box-shadow: 0 12px 28px rgba(25, 40, 36, 0.08) !important;
+  }
+
+  .record-page .record-sidebar .sidebar-box {
+    margin: 0 0 10px !important;
+    padding: 14px 15px !important;
+  }
+
+  .record-page .record-sidebar .sidebar-box strong,
+  .record-page .story-button,
+  .record-page .sidebar-home {
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+    word-break: normal !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .record-page .story-button-list {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+    margin: 0 0 12px !important;
+  }
+
+  .record-page .story-button,
+  .record-page .sidebar-home {
+    display: block !important;
+    width: 100% !important;
+    padding: 11px 12px !important;
+    border-radius: 12px !important;
+    text-align: left !important;
+    font-size: 0.92rem !important;
+    line-height: 1.6 !important;
+    white-space: normal !important;
+  }
+
+  .record-page .record-article,
+  .record-page .record-section,
+  .record-page .record-prose {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .record-page .record-prose {
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: clamp(18px, 5vw, 26px) !important;
+    border-radius: 18px !important;
+  }
+
+  .record-page .record-prose h1,
+  .record-page .record-prose h2,
+  .record-page .record-prose h3,
+  .record-page .record-prose p,
+  .record-page .record-prose li,
+  .record-page .record-prose td,
+  .record-page .record-prose th,
+  .record-page .story-byline {
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+    word-break: normal !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .record-page .record-prose h1,
+  .record-page .record-prose-title {
+    font-size: clamp(1.5rem, 7.6vw, 2.2rem) !important;
+    line-height: 1.4 !important;
+  }
+
+  .record-page .record-prose h2 {
+    font-size: clamp(1.18rem, 5.6vw, 1.58rem) !important;
+    line-height: 1.5 !important;
+  }
+
+  .record-page .record-prose h3 {
+    font-size: 1.1rem !important;
+    line-height: 1.55 !important;
+  }
+
+  .record-page .record-prose p,
+  .record-page .record-prose li {
+    font-size: 1rem !important;
+    line-height: 1.95 !important;
+  }
+
+  .record-page .story-illustration,
+  .record-page .record-inline-figure,
+  .record-page .record-gallery figure {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .record-page .story-illustration img,
+  .record-page .record-inline-figure img,
+  .record-page .record-gallery img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    object-fit: contain !important;
+  }
+
+  .record-page .markdown-table-wrap {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .record-page .record-pager {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    gap: 9px !important;
+  }
+
+  .record-list,
+  .story-entry-grid,
+  .story-directory-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    width: min(100% - 24px, 680px) !important;
+    max-width: 680px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .record-link,
+  .story-entry-card {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 18px 16px 20px !important;
+    border-radius: 16px !important;
+    writing-mode: horizontal-tb !important;
+  }
+
+  .story-directory-layout {
+    width: min(100% - 24px, 680px) !important;
+    max-width: 680px !important;
+    padding: 28px 0 62px !important;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .record-page .record-layout,
+  .record-list,
+  .story-entry-grid,
+  .story-directory-grid,
+  .story-directory-layout {
+    width: min(100% - 18px, 680px) !important;
+  }
+
+  .record-page .record-hero-copy,
+  .story-index-page .record-hero-copy {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .record-page .record-prose {
+    padding: 17px 13px !important;
+  }
+}
