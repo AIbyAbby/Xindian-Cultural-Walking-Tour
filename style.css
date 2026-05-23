@@ -79,16 +79,87 @@ a {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
   min-height: 70px;
   padding: 14px clamp(18px, 4vw, 48px);
-  background: rgba(245, 239, 228, 0.88);
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transition: background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+              border-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+              backdrop-filter 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+              box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.site-header.scrolled {
+  background: rgba(245, 239, 228, 0.82);
   border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(18px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 4px 30px rgba(37, 53, 47, 0.05);
+}
+
+/* Ensure mobile nav open overrides transparency */
+.site-header.scrolled,
+.site-header:has(.site-nav.open) {
+  background: rgba(245, 239, 228, 0.88) !important;
+  border-bottom: 1px solid var(--line) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+}
+
+/* Transition properties for smooth color transitions */
+.brand,
+.brand-icon,
+.brand-icon-line,
+.brand-icon-body,
+.brand-icon-book,
+.brand-icon-head,
+.site-nav a,
+.nav-toggle,
+.nav-toggle span {
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* White contrast theme when header is transparent on top of dark hero */
+.site-header:not(.scrolled):not(:has(.site-nav.open)) .brand {
+  color: #ffffff;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+}
+
+.site-header:not(.scrolled):not(:has(.site-nav.open)) .brand-icon-line,
+.site-header:not(.scrolled):not(:has(.site-nav.open)) .brand-icon-body,
+.site-header:not(.scrolled):not(:has(.site-nav.open)) .brand-icon-book {
+  stroke: #ffffff;
+}
+
+.site-header:not(.scrolled):not(:has(.site-nav.open)) .brand-icon-head {
+  fill: rgba(255, 255, 255, 0.2);
+  stroke: #ffffff;
+}
+
+.site-header:not(.scrolled):not(:has(.site-nav.open)) .site-nav a {
+  color: rgba(255, 255, 255, 0.86);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+}
+
+.site-header:not(.scrolled):not(:has(.site-nav.open)) .site-nav a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.site-header:not(.scrolled):not(:has(.site-nav.open)) .nav-toggle {
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.site-header:not(.scrolled):not(:has(.site-nav.open)) .nav-toggle span:not(.sr-only) {
+  background: #ffffff;
 }
 
 .brand {
@@ -191,6 +262,7 @@ a {
   position: absolute;
   inset: 0;
   z-index: -2;
+  overflow: hidden;
 }
 
 .hero-media img {
@@ -198,6 +270,10 @@ a {
   height: 100%;
   object-fit: cover;
   filter: saturate(0.88) contrast(0.96);
+  will-change: transform;
+  transform: scale(1.12);
+  transform-origin: center center;
+  transition: transform 0.1s cubic-bezier(0.1, 0.9, 0.2, 1);
 }
 
 .hero::before {
@@ -1565,12 +1641,17 @@ h3 {
   min-height: 360px;
   margin: 0;
   background: rgba(255,255,255,0.08);
+  overflow: hidden;
 }
 
 .record-hero-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  will-change: transform;
+  transform: scale(1.08);
+  transform-origin: center center;
+  transition: transform 0.1s cubic-bezier(0.1, 0.9, 0.2, 1);
 }
 
 .record-hero-image--focus-left img {

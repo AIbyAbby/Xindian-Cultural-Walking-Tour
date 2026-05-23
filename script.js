@@ -1,19 +1,61 @@
 const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
+const siteHeader = document.querySelector(".site-header");
+
+function updateHeaderState() {
+  if (!siteHeader) return;
+  const isScrolled = window.scrollY > 15;
+  const isNavOpen = siteNav && siteNav.classList.contains("open");
+  
+  if (isScrolled || isNavOpen) {
+    siteHeader.classList.add("scrolled");
+  } else {
+    siteHeader.classList.remove("scrolled");
+  }
+}
 
 if (navToggle && siteNav) {
   navToggle.addEventListener("click", () => {
     const isOpen = siteNav.classList.toggle("open");
     navToggle.setAttribute("aria-expanded", String(isOpen));
+    updateHeaderState();
   });
 
   siteNav.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       siteNav.classList.remove("open");
       navToggle.setAttribute("aria-expanded", "false");
+      updateHeaderState();
     });
   });
 }
+
+// Lightweight Scroll listener for Parallax and Header state
+const heroImage = document.querySelector(".hero-media img");
+const recordHeroImage = document.querySelector(".record-hero-image img");
+
+function handleScroll() {
+  const scrollY = window.scrollY;
+  
+  // Update header glassmorphism state
+  updateHeaderState();
+  
+  // Parallax effect on home page hero (only runs when visible)
+  if (heroImage && scrollY < window.innerHeight) {
+    heroImage.style.transform = `translateY(${scrollY * 0.35}px) scale(1.12)`;
+  }
+  
+  // Parallax effect on record page hero
+  if (recordHeroImage && scrollY < 600) {
+    recordHeroImage.style.transform = `translateY(${scrollY * 0.18}px) scale(1.08)`;
+  }
+}
+
+window.addEventListener("scroll", handleScroll);
+document.addEventListener("DOMContentLoaded", () => {
+  updateHeaderState();
+  handleScroll();
+});
 
 const filterButtons = document.querySelectorAll(".filter-button");
 const storyCards = document.querySelectorAll(".story-card");
