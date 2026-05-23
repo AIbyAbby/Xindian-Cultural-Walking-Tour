@@ -1,0 +1,12 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d8e6df"/><stop offset="1" stop-color="#f2d9b8"/></linearGradient>
+    <filter id="paper"><feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="4" seed="24"/><feColorMatrix type="saturate" values="0.3"/><feBlend mode="multiply" in2="SourceGraphic"/></filter>
+    <filter id="soft"><feGaussianBlur stdDeviation="1.5"/></filter>
+    <style>
+      .bg{fill:url(#sky)} .river{fill:#6aa39a;opacity:.82}.bank{fill:#91a06d;opacity:.75}.hill{fill:#738a60;opacity:.82}.lane,.path{fill:none;stroke:#dab986;stroke-width:34;stroke-linecap:round;opacity:.72}.houses rect{fill:#b67858;opacity:.78;stroke:#584137;stroke-width:3}.houses polygon{fill:#705040;opacity:.82;stroke:#584137;stroke-width:3}.fig circle{fill:#2e3e48;opacity:.9}.fig path{fill:#38515c;opacity:.76}.rain{fill:none;stroke:#5e7480;stroke-width:5;stroke-linecap:round;opacity:.5}.cloth{fill:#b98755;opacity:.55;stroke:#7a5a44;stroke-width:3}.tunnel{fill:#263139;opacity:.82}.table ellipse{fill:#b98b5f;opacity:.72}.table circle,.table path{fill:#344d59;opacity:.78}.mist{fill:none;stroke:#fff;stroke-width:42;opacity:.3;filter:url(#soft)}
+    </style>
+  </defs>
+  <rect class="bg" width="960" height="540"/>
+  <g filter="url(#paper)"><path class="lane" d="M90 540 C210 405 340 330 510 275 C650 230 790 205 960 180 L960 540 Z"/><g class="houses" transform="translate(50 215)"><rect x="0" y="60" width="150" height="170"/><polygon points="-12,60 75,8 162,60"/><rect x="205" y="35" width="135" height="195"/><polygon points="195,35 270,-12 350,35"/></g><g class="fig"><circle cx="545" cy="360" r="8"/><path d="M545 370 l-14 48 h28 z"/><path class="cloth" d="M588 384 C640 354 690 380 716 420 C656 440 615 430 575 405 Z"/></g><path class="rain" d="M150 65 l-35 90 M330 38 l-42 110 M680 52 l-38 106 M855 90 l-30 85"/></g>
+</svg>

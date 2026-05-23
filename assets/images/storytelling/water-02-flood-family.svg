@@ -1,0 +1,36 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d3e0dc"/><stop offset="1" stop-color="#ead1aa"/></linearGradient>
+    <filter id="paper"><feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="4" seed="17"/><feColorMatrix type="saturate" values="0.25"/><feBlend mode="multiply" in2="SourceGraphic"/></filter>
+    <filter id="soft"><feGaussianBlur stdDeviation="1.3"/></filter>
+    <style>
+      svg { background: url(#sky); }
+      .bg { fill:url(#sky); }
+      .river { fill:#5c9a92; opacity:.82; }
+      .bank,.ground { fill:#8b9863; opacity:.84; }
+      .hill,.mountain path { fill:#8b9863; opacity:.78; }
+      .lane,.path { fill:none; stroke:#d9b98a; stroke-width:34; stroke-linecap:round; opacity:.72; }
+      .houses rect { fill:#b97957; opacity:.78; stroke:#5d463c; stroke-width:3; }
+      .houses polygon { fill:#714e3d; opacity:.78; stroke:#5d463c; stroke-width:3; }
+      .arcade rect { fill:#b87a58; opacity:.8; stroke:#563f36; stroke-width:3; }
+      .arcade polygon { fill:#6a4d3d; opacity:.82; stroke:#563f36; stroke-width:3; }
+      .house-large rect { fill:#a96953; opacity:.78; stroke:#4b3b36; stroke-width:4; }
+      .house-large polygon { fill:#6d4a3d; opacity:.8; stroke:#4b3b36; stroke-width:4; }
+      .figures circle,.figure-alone circle { fill:#2f3f48; opacity:.88; }
+      .figures path,.figure-alone path { fill:#344d59; opacity:.76; }
+      .arm,.cable,.wave,.rain { fill:none; stroke:#78513b; stroke-width:5; stroke-linecap:round; opacity:.62; }
+      .mist { fill:none; stroke:#ffffff; stroke-width:42; opacity:.28; filter:url(#soft); }
+      .trees circle { fill:#5f7f5d; opacity:.58; } .trees rect { fill:#70543d; opacity:.58; }
+      .tunnel { fill:#27323a; opacity:.78; } .box,.buckets rect { fill:#c2a15d; opacity:.75; stroke:#5e4d36; stroke-width:3; }
+      .rainwash { fill:#94aab0; opacity:.18; }
+    </style>
+  </defs>
+  <rect class="bg" width="960" height="540"/>
+  <g filter="url(#paper)">
+      <path class="river" d="M0 280 C140 210 278 318 432 270 C600 218 760 230 960 180 L960 540 L0 540 Z"/>
+      <path class="wave" d="M60 355 C160 315 235 385 330 345 S520 300 615 350 S800 390 920 330"/>
+      <g class="figures"><circle cx="345" cy="255" r="10"/><path d="M345 266 c-28 20-50 42-66 72"/><circle cx="406" cy="238" r="8"/><path d="M398 250 c-25 32-54 58-88 82"/></g>
+      <path class="bank" d="M0 430 C130 375 240 410 370 390 C535 365 710 310 960 350 L960 540 L0 540 Z"/>
+      <g class="trees"><circle cx="760" cy="212" r="44"/><circle cx="810" cy="236" r="38"/><rect x="781" y="245" width="16" height="112"/></g>
+  </g>
+</svg>
