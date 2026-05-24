@@ -350,29 +350,37 @@ h3 {
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 30px;
+  gap: 10px;
+  margin-top: 26px;
+  max-width: 700px;
+}
+
+.hero-actions .button {
+  min-width: 92px;
 }
 
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
-  padding: 10px 20px;
+  min-height: 38px;
+  padding: 7px 14px;
   border: 1px solid rgba(255,255,255,0.55);
   border-radius: 999px;
   text-decoration: none;
   font-family: var(--font-sans);
+  font-size: 0.9rem;
   font-weight: 700;
-  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+  line-height: 1.25;
+  white-space: nowrap;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.11);
   transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
 }
 
 .button:hover,
 .button:focus {
   transform: translateY(-1px);
-  box-shadow: 0 16px 34px rgba(0,0,0,0.16);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.15);
 }
 
 .button.primary {
@@ -384,30 +392,6 @@ h3 {
 .button.ghost {
   background: rgba(255,255,255,0.1);
   color: white;
-}
-
-.hero-note {
-  position: absolute;
-  right: clamp(18px, 5vw, 72px);
-  bottom: 28px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 8px;
-  max-width: min(760px, calc(100% - 36px));
-}
-
-.hero-note span {
-  padding: 8px 13px;
-  border: 1px solid rgba(255,255,255,0.38);
-  border-radius: 999px;
-  color: white;
-  background: rgba(22, 35, 33, 0.36);
-  font-family: var(--font-sans);
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  backdrop-filter: blur(10px);
 }
 
 .section {
@@ -2413,7 +2397,7 @@ h3 {
     min-height: 760px;
     align-items: center;
     padding-top: 88px;
-    padding-bottom: 150px;
+    padding-bottom: 108px;
   }
 
   .hero::before {
@@ -2422,8 +2406,22 @@ h3 {
       linear-gradient(0deg, rgba(247,242,232,0.28), transparent 48%);
   }
 
-  .hero-note {
-    justify-content: flex-start;
+  .hero-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 310px;
+    gap: 8px;
+    margin-top: 22px;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    padding: 8px 10px;
+    border-radius: var(--radius);
+    font-size: 0.9rem;
+    box-shadow: none;
   }
 
   .intro-grid,
@@ -2530,10 +2528,6 @@ h3 {
 
   h1 {
     font-size: 3.2rem;
-  }
-
-  .hero-note span {
-    font-size: 0.82rem;
   }
 
   .story-directory-layout {
