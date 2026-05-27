@@ -2413,6 +2413,28 @@ h3 {
 }
 
 @media (max-width: 760px) {
+  /* 手機版滾動性能與穩定性最佳化 (鎖定縮放，停用 JavaScript 動態 Parallax 造成的抖動) */
+  .hero-media img,
+  .record-hero-image img {
+    will-change: auto !important;
+    transition: none !important;
+  }
+  
+  .hero-media img {
+    transform: scale(1.12) !important;
+  }
+  
+  .record-hero-image img {
+    transform: scale(1.08) !important;
+  }
+
+  /* 田調記憶大圖卡片手機端滑動加速與穩定 */
+  .source-lead-text {
+    transform: translate3d(0, 0, 0);
+    will-change: auto;
+    background-attachment: scroll !important;
+  }
+
   .site-header {
     min-height: 64px;
   }

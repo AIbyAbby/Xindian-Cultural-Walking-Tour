@@ -40,7 +40,22 @@ function handleScroll() {
   // Update header glassmorphism state
   updateHeaderState();
   
-  // Parallax effect on home page hero (only runs when visible)
+  // Mobile / Touch device detection to prevent scrolling jitter
+  const isMobile = window.matchMedia("(max-width: 768px)").matches || 
+                   ('ontouchstart' in window) || 
+                   (navigator.maxTouchPoints > 0);
+  
+  if (isMobile) {
+    if (heroImage) {
+      heroImage.style.transform = "scale(1.12)";
+    }
+    if (recordHeroImage) {
+      recordHeroImage.style.transform = "scale(1.08)";
+    }
+    return;
+  }
+  
+  // Parallax effect on home page hero (only runs on desktop when visible)
   if (heroImage && scrollY < window.innerHeight) {
     heroImage.style.transform = `translateY(${scrollY * 0.35}px) scale(1.12)`;
   }
