@@ -33,6 +33,7 @@ if (navToggle && siteNav) {
 // Lightweight Scroll listener for Parallax and Header state
 const heroImage = document.querySelector(".hero-media img");
 const recordHeroImage = document.querySelector(".record-hero-image img");
+const sourceHeroImage = document.querySelector(".source-hero-media img");
 
 function handleScroll() {
   const scrollY = window.scrollY;
@@ -40,7 +41,7 @@ function handleScroll() {
   // Update header glassmorphism state
   updateHeaderState();
   
-  // Mobile / Touch device detection to prevent scrolling jitter
+  // Mobile / Touch device detection to prevent scrolling scrolling jitter
   const isMobile = window.matchMedia("(max-width: 768px)").matches || 
                    ('ontouchstart' in window) || 
                    (navigator.maxTouchPoints > 0);
@@ -51,6 +52,9 @@ function handleScroll() {
     }
     if (recordHeroImage) {
       recordHeroImage.style.transform = "scale(1.08)";
+    }
+    if (sourceHeroImage) {
+      sourceHeroImage.style.transform = "scale(1.12)";
     }
     return;
   }
@@ -63,6 +67,17 @@ function handleScroll() {
   // Parallax effect on record page hero
   if (recordHeroImage && scrollY < 600) {
     recordHeroImage.style.transform = `translateY(${scrollY * 0.18}px) scale(1.08)`;
+  }
+
+  // Parallax effect on source hero (only runs on desktop when visible in viewport)
+  const sourceHero = document.querySelector(".source-hero");
+  if (sourceHero && sourceHeroImage) {
+    const rect = sourceHero.getBoundingClientRect();
+    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+    if (isVisible) {
+      const offset = (window.innerHeight - rect.top) * 0.12;
+      sourceHeroImage.style.transform = `translateY(${offset}px) scale(1.12)`;
+    }
   }
 }
 

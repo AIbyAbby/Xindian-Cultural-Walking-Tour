@@ -1379,53 +1379,80 @@ h3 {
   color: rgba(255,255,255,0.82);
 }
 
-/* Beautiful centered cinematic intro/outro paragraph */
-.source-lead-text {
-  max-width: 820px;
-  margin: 40px auto 55px;
-  text-align: left;
-  padding: 54px clamp(24px, 6vw, 64px);
-  border-radius: var(--radius);
-  background: linear-gradient(135deg, rgba(23, 33, 31, 0.45), rgba(36, 49, 45, 0.35)), url('assets/images/fieldwork-memory.jpg') no-repeat center center / cover;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+/* Beautiful full-bleed cinematic hero banner for Fieldwork Memory section */
+.source-hero {
+  position: relative;
+  min-height: 480px;
+  display: grid;
+  align-items: center;
+  padding: clamp(64px, 10vw, 120px) clamp(18px, 5vw, 72px);
+  margin-bottom: 50px;
+  overflow: hidden;
+  isolation: isolate;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.source-lead-text .eyebrow {
+.source-hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.source-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform;
+  transform: scale(1.12); /* Slightly scaled up for parallax padding */
+  transform-origin: center center;
+  transition: transform 0.1s cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+.source-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(23, 33, 31, 0.88), rgba(23, 33, 31, 0.55) 60%, rgba(23, 33, 31, 0.2)),
+    linear-gradient(0deg, rgba(36, 49, 45, 0.28) 0%, transparent 50%);
+}
+
+.source-hero-content {
+  max-width: 780px;
+  color: white;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+}
+
+.source-hero-content .eyebrow {
   color: #f3c06d;
   font-family: var(--font-sans);
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 800;
-  letter-spacing: 0.14em;
-  margin-bottom: 12px;
-  margin-top: 0;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  max-width: 540px;
+  margin-bottom: 12px;
 }
 
-.source-lead-text h2 {
+.source-hero-content h2 {
   color: white;
   font-family: var(--font-sans);
   font-weight: 900;
-  font-size: clamp(1.8rem, 4.5vw, 3.2rem);
-  margin: 0 0 20px;
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
   line-height: 1.25;
-  letter-spacing: 0.02em;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
-  max-width: 540px;
+  margin: 0 0 18px;
+  letter-spacing: 0.01em;
 }
 
-.source-lead-text .lead-paragraph {
-  color: rgba(255, 255, 255, 0.98);
+.source-hero-content .lead-paragraph {
+  color: rgba(255, 255, 255, 0.95);
   font-family: var(--font-serif);
-  font-size: clamp(1.15rem, 2.1vw, 1.55rem);
+  font-size: clamp(1.08rem, 2vw, 1.28rem);
   line-height: 1.95;
   font-weight: 500;
-  letter-spacing: 0.05em;
-  text-wrap: balance;
   margin: 0;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
-  max-width: 540px;
+  text-wrap: balance;
 }
 
 .site-footer {
