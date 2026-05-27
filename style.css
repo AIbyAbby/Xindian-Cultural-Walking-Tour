@@ -269,7 +269,7 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: saturate(0.88) contrast(0.96);
+  filter: none;
   will-change: transform;
   transform: scale(1.12);
   transform-origin: center center;
@@ -282,8 +282,8 @@ a {
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(90deg, rgba(21, 34, 31, 0.84), rgba(35, 79, 86, 0.52) 50%, rgba(21, 34, 31, 0.14)),
-    linear-gradient(0deg, rgba(245, 239, 228, 0.58), transparent 44%);
+    linear-gradient(90deg, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.35) 60%, rgba(0, 0, 0, 0.05)),
+    linear-gradient(0deg, rgba(245, 239, 228, 0.15), transparent 44%);
 }
 
 .hero-content {
