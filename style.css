@@ -3051,50 +3051,7 @@ body {
   }
 
   .record-page .record-sidebar {
-    position: static !important;
-    top: auto !important;
-    display: block !important;
-    width: 100% !important;
-    max-width: none !important;
-    margin: 0 0 18px !important;
-    padding: 14px !important;
-    border: 1px solid rgba(45, 119, 131, 0.16) !important;
-    border-radius: 18px !important;
-    background: rgba(255, 252, 245, 0.94) !important;
-    box-shadow: 0 12px 28px rgba(25, 40, 36, 0.08) !important;
-  }
-
-  .record-page .record-sidebar .sidebar-box {
-    margin: 0 0 10px !important;
-    padding: 14px 15px !important;
-  }
-
-  .record-page .record-sidebar .sidebar-box strong,
-  .record-page .story-button,
-  .record-page .sidebar-home {
-    writing-mode: horizontal-tb !important;
-    text-orientation: mixed !important;
-    word-break: normal !important;
-    overflow-wrap: anywhere !important;
-  }
-
-  .record-page .story-button-list {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 8px !important;
-    margin: 0 0 12px !important;
-  }
-
-  .record-page .story-button,
-  .record-page .sidebar-home {
-    display: block !important;
-    width: 100% !important;
-    padding: 11px 12px !important;
-    border-radius: 12px !important;
-    text-align: left !important;
-    font-size: 0.92rem !important;
-    line-height: 1.6 !important;
-    white-space: normal !important;
+    display: none !important;
   }
 
   .record-page .record-article,
