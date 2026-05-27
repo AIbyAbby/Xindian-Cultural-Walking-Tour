@@ -1354,7 +1354,7 @@ h3 {
 }
 
 .source-section {
-  background: #24312d;
+  background: linear-gradient(135deg, rgba(23, 33, 31, 0.92), rgba(36, 49, 45, 0.85)), url('assets/images/fieldwork-memory.jpg') no-repeat center center / cover;
   color: white;
 }
 
