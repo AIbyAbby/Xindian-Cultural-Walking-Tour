@@ -3186,3 +3186,71 @@ body {
     padding: 17px 13px !important;
   }
 }
+
+/* Reading pages: keep every article focused on the story itself */
+.record-page .record-sidebar,
+.story-page .record-sidebar {
+  display: none !important;
+}
+
+.record-page .record-layout {
+  grid-template-columns: minmax(0, 1fr) !important;
+  width: min(980px, calc(100% - 40px));
+}
+
+.record-page .record-article,
+.record-page .record-section,
+.record-page .record-prose {
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+.record-page .record-prose {
+  border-color: rgba(27, 81, 79, 0.14);
+  box-shadow: 0 22px 58px rgba(43, 67, 61, 0.11);
+}
+
+.record-page .record-prose h1,
+.record-page .record-prose h2,
+.record-page .record-prose h3 {
+  color: var(--pine);
+  letter-spacing: 0;
+}
+
+.record-page .record-inline-figure,
+.record-page .story-illustration,
+.record-page .record-gallery figure {
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(27, 81, 79, 0.12);
+  background: #fffaf1;
+  box-shadow: 0 16px 40px rgba(43, 67, 61, 0.12);
+}
+
+.record-page .record-inline-figure img,
+.record-page .story-illustration img,
+.record-page .record-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.record-page .record-inline-figure figcaption,
+.record-page .story-illustration figcaption,
+.record-page .record-gallery figcaption {
+  color: #76685b;
+  font-size: 0.94rem;
+  line-height: 1.7;
+  padding: 10px 14px 13px;
+}
+
+@media screen and (max-width: 900px) {
+  .record-page .record-layout {
+    width: min(100% - 22px, 720px) !important;
+    padding-top: 18px !important;
+  }
+
+  .record-page .record-prose {
+    padding: clamp(18px, 5vw, 28px) !important;
+  }
+}
