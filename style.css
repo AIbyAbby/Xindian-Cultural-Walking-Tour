@@ -394,6 +394,73 @@ h3 {
   color: white;
 }
 
+/* Unique premium coloring for each hero action button */
+.button.primary.btn-story {
+  background: linear-gradient(135deg, #f3d89d, #d7a85e);
+  border-color: rgba(255, 255, 255, 0.58);
+  color: #24312d;
+}
+
+.button.ghost.btn-stories {
+  border-color: rgba(217, 122, 95, 0.65) !important;
+  color: #fca790 !important;
+  background: rgba(217, 122, 95, 0.08) !important;
+}
+.button.ghost.btn-stories:hover,
+.button.ghost.btn-stories:focus {
+  background: #d97a5f !important;
+  color: #ffffff !important;
+  border-color: #d97a5f !important;
+}
+
+.button.ghost.btn-records {
+  border-color: rgba(79, 168, 141, 0.65) !important;
+  color: #a3ebd7 !important;
+  background: rgba(79, 168, 141, 0.08) !important;
+}
+.button.ghost.btn-records:hover,
+.button.ghost.btn-records:focus {
+  background: #4fa88d !important;
+  color: #ffffff !important;
+  border-color: #4fa88d !important;
+}
+
+.button.ghost.btn-maps {
+  border-color: rgba(110, 180, 192, 0.65) !important;
+  color: #b1effa !important;
+  background: rgba(110, 180, 192, 0.08) !important;
+}
+.button.ghost.btn-maps:hover,
+.button.ghost.btn-maps:focus {
+  background: #6eb4c0 !important;
+  color: #ffffff !important;
+  border-color: #6eb4c0 !important;
+}
+
+.button.ghost.btn-sources {
+  border-color: rgba(229, 181, 103, 0.65) !important;
+  color: #f7d59b !important;
+  background: rgba(229, 181, 103, 0.08) !important;
+}
+.button.ghost.btn-sources:hover,
+.button.ghost.btn-sources:focus {
+  background: #e5b567 !important;
+  color: #24312d !important;
+  border-color: #e5b567 !important;
+}
+
+.button.ghost.btn-picturebook {
+  border-color: rgba(200, 162, 200, 0.65) !important;
+  color: #ebd1eb !important;
+  background: rgba(200, 162, 200, 0.08) !important;
+}
+.button.ghost.btn-picturebook:hover,
+.button.ghost.btn-picturebook:focus {
+  background: #c8a2c8 !important;
+  color: #24312d !important;
+  border-color: #c8a2c8 !important;
+}
+
 .section {
   padding: clamp(78px, 10vw, 128px) clamp(18px, 5vw, 72px);
 }
