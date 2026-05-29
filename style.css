@@ -374,7 +374,7 @@ h3 {
   line-height: 1.25;
   white-space: nowrap;
   box-shadow: 0 10px 22px rgba(0,0,0,0.11);
-  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 200ms ease, border-color 200ms ease, color 200ms ease;
 }
 
 .button:hover,
@@ -396,69 +396,75 @@ h3 {
 
 /* Unique premium coloring for each hero action button */
 .button.primary.btn-story {
-  background: linear-gradient(135deg, #f3d89d, #d7a85e);
-  border-color: rgba(255, 255, 255, 0.58);
-  color: #24312d;
+  background: linear-gradient(135deg, #f3d89d, #d7a85e) !important;
+  border-color: rgba(255, 255, 255, 0.58) !important;
+  color: #24312d !important;
+}
+.button.primary.btn-story:hover,
+.button.primary.btn-story:focus {
+  background: linear-gradient(135deg, #fff3d1, #f3c27a) !important;
+  border-color: #fff3d1 !important;
+  color: #24312d !important;
 }
 
 .button.ghost.btn-stories {
-  border-color: rgba(217, 122, 95, 0.65) !important;
-  color: #fca790 !important;
-  background: rgba(217, 122, 95, 0.08) !important;
+  border-color: rgba(244, 143, 116, 0.8) !important;
+  color: #ffab91 !important;
+  background: rgba(244, 143, 116, 0.12) !important;
 }
 .button.ghost.btn-stories:hover,
 .button.ghost.btn-stories:focus {
-  background: #d97a5f !important;
+  background: linear-gradient(135deg, #ffab91, #e64a19) !important;
   color: #ffffff !important;
-  border-color: #d97a5f !important;
+  border-color: #ffab91 !important;
 }
 
 .button.ghost.btn-records {
-  border-color: rgba(79, 168, 141, 0.65) !important;
-  color: #a3ebd7 !important;
-  background: rgba(79, 168, 141, 0.08) !important;
+  border-color: rgba(128, 203, 196, 0.8) !important;
+  color: #a7ffeb !important;
+  background: rgba(128, 203, 196, 0.12) !important;
 }
 .button.ghost.btn-records:hover,
 .button.ghost.btn-records:focus {
-  background: #4fa88d !important;
+  background: linear-gradient(135deg, #a7ffeb, #00897b) !important;
   color: #ffffff !important;
-  border-color: #4fa88d !important;
+  border-color: #a7ffeb !important;
 }
 
 .button.ghost.btn-maps {
-  border-color: rgba(110, 180, 192, 0.65) !important;
-  color: #b1effa !important;
-  background: rgba(110, 180, 192, 0.08) !important;
+  border-color: rgba(129, 212, 250, 0.8) !important;
+  color: #b3e5fc !important;
+  background: rgba(129, 212, 250, 0.12) !important;
 }
 .button.ghost.btn-maps:hover,
 .button.ghost.btn-maps:focus {
-  background: #6eb4c0 !important;
+  background: linear-gradient(135deg, #b3e5fc, #0288d1) !important;
   color: #ffffff !important;
-  border-color: #6eb4c0 !important;
+  border-color: #b3e5fc !important;
 }
 
 .button.ghost.btn-sources {
-  border-color: rgba(229, 181, 103, 0.65) !important;
-  color: #f7d59b !important;
-  background: rgba(229, 181, 103, 0.08) !important;
+  border-color: rgba(255, 204, 128, 0.8) !important;
+  color: #ffe082 !important;
+  background: rgba(255, 204, 128, 0.12) !important;
 }
 .button.ghost.btn-sources:hover,
 .button.ghost.btn-sources:focus {
-  background: #e5b567 !important;
-  color: #24312d !important;
-  border-color: #e5b567 !important;
+  background: linear-gradient(135deg, #ffe082, #f57c00) !important;
+  color: #ffffff !important;
+  border-color: #ffe082 !important;
 }
 
 .button.ghost.btn-picturebook {
-  border-color: rgba(200, 162, 200, 0.65) !important;
-  color: #ebd1eb !important;
-  background: rgba(200, 162, 200, 0.08) !important;
+  border-color: rgba(206, 147, 216, 0.8) !important;
+  color: #ea80fc !important;
+  background: rgba(206, 147, 216, 0.12) !important;
 }
 .button.ghost.btn-picturebook:hover,
 .button.ghost.btn-picturebook:focus {
-  background: #c8a2c8 !important;
-  color: #24312d !important;
-  border-color: #c8a2c8 !important;
+  background: linear-gradient(135deg, #ea80fc, #8e24aa) !important;
+  color: #ffffff !important;
+  border-color: #ea80fc !important;
 }
 
 .section {
