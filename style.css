@@ -1754,7 +1754,7 @@ h3 {
   max-width: 980px;
   margin-bottom: 16px;
   font-family: var(--font-sans);
-  font-size: clamp(2.35rem, 5.6vw, 5.2rem);
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
   line-height: 1.18;
   font-weight: 900;
 }
@@ -1779,7 +1779,8 @@ h3 {
 
 .record-hero-image img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
   will-change: transform;
   transform: none;
