@@ -3434,3 +3434,47 @@ body {
     padding: clamp(18px, 5vw, 28px) !important;
   }
 }
+
+/* Mobile UI & RWD optimizations (max-width: 768px) */
+@media (max-width: 768px) {
+  /* 1. Background image positioning: offset to the right to preserve the dragon boat and cliff */
+  .hero-media img {
+    object-position: 63% center !important;
+  }
+
+  /* 2. Linear Gradient Overlay: from bottom (deep semi-transparent forest green/black) to top */
+  .hero::before {
+    background: linear-gradient(to top, rgba(10, 24, 21, 0.95) 0%, rgba(10, 24, 21, 0.6) 45%, rgba(0, 0, 0, 0.2) 100%) !important;
+  }
+
+  /* 3. Hero actions: 2x2 grid + bottom full width button layout */
+  .hero-actions {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    width: 100% !important;
+    max-width: 420px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-content: center !important;
+  }
+
+  /* 4. Button styles: smaller padding, smaller font-size, centered text, 8px border-radius */
+  .hero-actions .button {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 10px 8px !important;
+    font-size: 0.82rem !important;
+    border-radius: 8px !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  /* 5. Last button (田調記憶) anchors at the bottom, spanning full width */
+  .hero-actions .button.btn-sources {
+    grid-column: span 2 !important;
+    letter-spacing: 0.08em !important;
+  }
+}
