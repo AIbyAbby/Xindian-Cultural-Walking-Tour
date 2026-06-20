@@ -3456,36 +3456,129 @@ body {
   padding: 10px 14px 13px;
 }
 
-/* Picture Book Section */
-.picturebook-preview-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  max-width: var(--content);
+/* Premium Storybook Flipper */
+.book-container {
+  max-width: 960px;
   margin: 0 auto 40px;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.picturebook-preview-card {
-  margin: 0;
-  border: 1px solid rgba(45, 119, 131, 0.16);
-  border-radius: var(--radius);
-  background: rgba(255, 252, 245, 0.95);
-  overflow: hidden;
-  box-shadow: 0 18px 44px rgba(25, 40, 36, 0.08);
-  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.picturebook-preview-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 24px 54px rgba(25, 40, 36, 0.15);
-}
-
-.picturebook-preview-card img {
-  display: block;
+.book-viewport {
+  position: relative;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 3vw, 24px);
+}
+
+.book-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 760px;
   aspect-ratio: 16 / 9;
-  object-fit: contain;
+  background: rgba(255, 252, 245, 0.95);
+  border: 1px solid rgba(45, 119, 131, 0.18);
+  border-radius: var(--radius);
+  box-shadow: 0 24px 58px rgba(25, 40, 36, 0.12);
+  overflow: hidden;
+}
+
+.book-page-container {
+  width: 100%;
+  height: 100%;
   background: #f7efe1;
+}
+
+.book-page-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.book-shadow-spine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 15px;
+  z-index: 5;
+  pointer-events: none;
+  background: linear-gradient(to right, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.05) 50%, transparent 100%);
+}
+
+.book-nav-btn {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(37, 53, 47, 0.15);
+  border-radius: 50%;
+  width: clamp(38px, 6vw, 48px);
+  height: clamp(38px, 6vw, 48px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(31, 47, 42, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+  color: var(--ink);
+  flex-shrink: 0;
+}
+
+.book-nav-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.book-nav-btn:hover:not(:disabled) {
+  transform: scale(1.08);
+  background: #ffffff;
+  color: var(--river);
+  box-shadow: 0 10px 28px rgba(31, 47, 42, 0.16);
+}
+
+.book-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.book-pagination {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.book-page-info {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+
+.book-progress-bar {
+  width: 100%;
+  height: 5px;
+  background: rgba(37, 53, 47, 0.08);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.book-progress-fill {
+  height: 100%;
+  background: var(--gold);
+  border-radius: 99px;
+  transition: width 0.3s ease;
 }
 
 .picturebook-action {
@@ -3500,12 +3593,6 @@ body {
 }
 
 @media screen and (max-width: 900px) {
-  .picturebook-preview-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    padding: 0 12px;
-  }
-  
   .picturebook-action .button.primary {
     width: calc(100% - 24px);
     max-width: 320px;

@@ -120,3 +120,67 @@ document.querySelectorAll(".record-prose").forEach((prose) => {
     }
   });
 });
+
+// Storybook Interactive Flipper
+document.addEventListener("DOMContentLoaded", () => {
+  const rightPageImg = document.querySelector(".book-page-img");
+  const pageInfo = document.querySelector(".book-page-info");
+  const progressFill = document.querySelector(".book-progress-fill");
+  const prevBtn = document.querySelector(".prev-btn");
+  const nextBtn = document.querySelector(".next-btn");
+  
+  if (!rightPageImg || !prevBtn || !nextBtn) return;
+  
+  const pages = [
+    "assets/images/storybook-runhua/page-01.png",
+    "assets/images/storybook-runhua/page-02.png",
+    "assets/images/storybook-runhua/page-03.png",
+    "assets/images/storybook-runhua/page-04.png",
+    "assets/images/storybook-runhua/page-05.png",
+    "assets/images/storybook-runhua/page-06.png",
+    "assets/images/storybook-runhua/page-07.png",
+    "assets/images/storybook-runhua/page-08.png",
+    "assets/images/storybook-runhua/page-09.png",
+    "assets/images/storybook-runhua/page-10.png",
+    "assets/images/storybook-runhua/page-11.png",
+    "assets/images/storybook-runhua/page-12.png"
+  ];
+  
+  let currentState = 0;
+  
+  function updateBookView() {
+    rightPageImg.src = pages[currentState];
+    
+    if (currentState === 0) {
+      pageInfo.textContent = `封面 (第 1 頁 / 12)`;
+    } else if (currentState === pages.length - 1) {
+      pageInfo.textContent = `封底 (第 12 頁 / 12)`;
+    } else {
+      pageInfo.textContent = `第 ${currentState + 1} 頁 / 12`;
+    }
+    
+    const percent = ((currentState + 1) / pages.length) * 100;
+    if (progressFill) {
+      progressFill.style.width = `${percent}%`;
+    }
+    
+    prevBtn.disabled = currentState === 0;
+    nextBtn.disabled = currentState === pages.length - 1;
+  }
+  
+  prevBtn.addEventListener("click", () => {
+    if (currentState > 0) {
+      currentState--;
+      updateBookView();
+    }
+  });
+  
+  nextBtn.addEventListener("click", () => {
+    if (currentState < pages.length - 1) {
+      currentState++;
+      updateBookView();
+    }
+  });
+  
+  updateBookView();
+});

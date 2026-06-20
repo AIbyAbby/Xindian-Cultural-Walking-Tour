@@ -167,16 +167,34 @@
           <p>一頁一頁翻開火柴盒片廠的清晨，讓木片、手工、工廠與地方生活的記憶，在圖像裡重新亮起來。那些火柴盒與手上的工夫，曾撐起一段日子，也把地方產業樸素的溫度，留在我們心裡。</p>
         </div>
         
-        <div class="picturebook-preview-grid">
-          <figure class="picturebook-preview-card">
-            <img src="assets/images/storybook-runhua/page-01.png" alt="旋出希望的早晨：第 1 頁" width="1440" height="810" loading="lazy">
-          </figure>
-          <figure class="picturebook-preview-card">
-            <img src="assets/images/storybook-runhua/page-02.png" alt="旋出希望的早晨：第 2 頁" width="1440" height="810" loading="lazy">
-          </figure>
-          <figure class="picturebook-preview-card">
-            <img src="assets/images/storybook-runhua/page-03.png" alt="旋出希望的早晨：第 3 頁" width="1440" height="810" loading="lazy">
-          </figure>
+        <div class="book-container">
+          <div class="book-viewport">
+            <!-- 上一頁 -->
+            <button class="book-nav-btn prev-btn" aria-label="上一頁">
+              <svg viewBox="0 0 24 24" width="24" height="24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+            </button>
+            
+            <!-- 繪本畫面外框 -->
+            <div class="book-wrapper">
+              <div class="book-shadow-spine"></div>
+              <div class="book-page-container">
+                <img class="book-page-img" src="assets/images/storybook-runhua/page-01.png" alt="旋出希望的早晨繪本頁面" width="1440" height="810" fetchpriority="high">
+              </div>
+            </div>
+            
+            <!-- 下一頁 -->
+            <button class="book-nav-btn next-btn" aria-label="下一頁">
+              <svg viewBox="0 0 24 24" width="24" height="24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            </button>
+          </div>
+          
+          <!-- 進度與分頁資訊 -->
+          <div class="book-pagination">
+            <span class="book-page-info">封面 (第 1 頁 / 12)</span>
+            <div class="book-progress-bar">
+              <div class="book-progress-fill" style="width: 8.33%;"></div>
+            </div>
+          </div>
         </div>
 
         <div class="picturebook-action">
