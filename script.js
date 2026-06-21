@@ -1,6 +1,13 @@
+// Force scroll position to the top and disable automatic scroll restoration
+if (history.scrollRestoration) {
+  history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+
 const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
 const siteHeader = document.querySelector(".site-header");
+
 
 function updateHeaderState() {
   if (!siteHeader) return;
