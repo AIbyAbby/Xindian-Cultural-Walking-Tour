@@ -184,3 +184,11 @@ document.addEventListener("DOMContentLoaded", () => {
   
   updateBookView();
 });
+
+// Enable smooth scroll only after initial load to prevent smooth scrolling on page load/restoration
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    document.documentElement.style.scrollBehavior = "smooth";
+  }, 150);
+});
+
