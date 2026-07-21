@@ -20,6 +20,73 @@
   --content: 1120px;
 }
 
+/* Walking map route gallery and route detail */
+.walk-route-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 3vw, 28px);
+}
+
+.walk-route-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.76);
+  box-shadow: var(--shadow);
+  color: inherit;
+  text-decoration: none;
+}
+
+.walk-route-card img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; }
+.walk-route-card__body { padding: 20px; }
+.walk-route-card__body h3 { margin: 0 0 8px; font-size: 1.45rem; }
+.walk-route-card__body p { margin: 0; color: var(--muted); }
+.route-number {
+  position: absolute;
+  z-index: 1;
+  top: 14px;
+  left: 14px;
+  min-width: 46px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: rgba(36,49,45,0.9);
+  color: white;
+  font-weight: 800;
+  text-align: center;
+}
+.route-status { display: inline-flex; margin-top: 16px; color: var(--river-dark); font-weight: 800; }
+.walk-route-card.is-ready { transition: transform .2s ease, box-shadow .2s ease; }
+.walk-route-card.is-ready:hover, .walk-route-card.is-ready:focus-visible { transform: translateY(-4px); box-shadow: 0 22px 48px rgba(25,40,36,.16); }
+.walk-route-card.is-coming-soon img { filter: grayscale(.72); opacity: .6; }
+
+.walking-map-page { background: var(--paper); }
+.walking-route-shell { width: min(1180px, calc(100% - 32px)); margin: 0 auto; padding: 30px 0 90px; }
+.walking-route-hero { padding: clamp(30px, 8vw, 90px) 0 42px; }
+.walking-route-hero h1 { margin: 12px 0 18px; font-size: clamp(3rem, 9vw, 7rem); }
+.walking-route-hero > p:last-child { max-width: 720px; color: var(--muted); font-size: 1.08rem; }
+.walking-map-workspace { padding: clamp(18px, 4vw, 34px); border-radius: var(--radius); background: white; box-shadow: var(--shadow); }
+.walking-map-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
+.walking-map-tab { min-height: 46px; padding: 10px 18px; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); color: var(--ink); font: inherit; font-weight: 800; cursor: pointer; }
+.walking-map-tab.is-active { background: var(--river-dark); color: white; }
+.walking-map-panel img { width: 100%; max-height: 72vh; object-fit: contain; border-radius: calc(var(--radius) - 6px); background: var(--paper); }
+.walking-map-panel > p { color: var(--muted); }
+.map-coming-soon { min-height: 380px; display: grid; place-content: center; gap: 8px; text-align: center; border: 1px dashed rgba(45,119,131,.42); border-radius: calc(var(--radius) - 6px); background: linear-gradient(135deg, rgba(45,119,131,.08), rgba(197,154,82,.1)); }
+.map-coming-soon strong { font-size: clamp(1.5rem, 4vw, 2.5rem); }
+.map-coming-soon span { color: var(--muted); }
+.walking-stops { padding: clamp(50px, 9vw, 100px) 0 0; }
+.walking-stop-list { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; padding: 0; }
+.walking-stop-list li { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 14px; background: rgba(255,255,255,.72); }
+.walking-stop-list b { color: var(--river-dark); }
+.walking-route-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.walking-route-actions .button[disabled] { opacity: .52; cursor: not-allowed; }
+
+@media (max-width: 720px) {
+  .walk-route-grid, .walking-stop-list { grid-template-columns: 1fr; }
+  .walking-map-tabs { display: grid; grid-template-columns: 1fr; }
+  .walking-map-tab { width: 100%; }
+}
+
 * {
   box-sizing: border-box;
 }

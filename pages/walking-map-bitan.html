@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="碧潭水岸 001 至 015 散步路線，包含離線總圖、Q 版總圖與互動導覽。">
+    <title>碧潭水岸散步地圖｜巷光・水影・人的故事</title>
+    <link rel="stylesheet" href="../style.css">
+  </head>
+  <body class="walking-map-page">
+    <main class="walking-route-shell">
+      <header class="walking-route-hero">
+        <a class="section-home-link" href="../index.html#students">回到四條散步路線</a>
+        <p class="eyebrow">第 02 條散步路線</p>
+        <h1>碧潭水岸</h1>
+        <p>從 001 新店一號堤防走到 015 太平宮，沿著吊橋、兩岸水岸與地方故事慢慢前進。</p>
+      </header>
+
+      <section class="walking-map-workspace" aria-labelledby="map-mode-title">
+        <h2 id="map-mode-title" class="sr-only">選擇地圖模式</h2>
+        <div class="walking-map-tabs" role="tablist" aria-label="地圖模式">
+          <button class="walking-map-tab is-active" type="button" data-map-mode="offline" role="tab" aria-selected="true">離線總圖</button>
+          <button class="walking-map-tab" type="button" data-map-mode="q" role="tab" aria-selected="false">Q 版總圖</button>
+          <button class="walking-map-tab" type="button" data-map-mode="interactive" role="tab" aria-selected="false">互動導覽</button>
+        </div>
+
+        <div class="walking-map-panel is-active" data-map-panel="offline" role="tabpanel">
+          <img src="../assets/images/maps/map-0502-bitan.jpg" alt="碧潭水岸離線總圖初版">
+          <p>正式離線總圖會依 001 至 015 的實際步行道路重新繪製，完成後可下載到手機。</p>
+        </div>
+        <div class="walking-map-panel" data-map-panel="q" role="tabpanel" hidden>
+          <div class="map-coming-soon"><strong>Q 版總圖製作中</strong><span>河岸文化風格與雙馬尾小導遊即將加入。</span></div>
+        </div>
+        <div class="walking-map-panel" data-map-panel="interactive" role="tabpanel" hidden>
+          <div class="map-coming-soon"><strong>互動導覽建置中</strong><span>將提供定位、下一站提示與景點點選。</span></div>
+        </div>
+      </section>
+
+      <section class="walking-stops" aria-labelledby="stops-title">
+        <div class="section-heading"><p class="eyebrow">沿途 15 站</p><h2 id="stops-title">從 001 走到 015</h2></div>
+        <ol class="walking-stop-list">
+          <li><b>001</b><span>新店一號堤防</span></li><li><b>002</b><span>新店長老教會</span></li>
+          <li><b>003</b><span>眺望新店小赤壁</span></li><li><b>004</b><span>碧潭右岸水岸</span></li>
+          <li><b>005</b><span>碧潭吊橋橋塔與基座</span></li><li><b>006</b><span>碧潭吊橋</span></li>
+          <li><b>007</b><span>新店溪</span></li><li><b>008</b><span>碧潭左岸</span></li>
+          <li><b>009</b><span>碧潭樂園售票口遺址</span></li><li><b>010</b><span>海藏寺</span></li>
+          <li><b>011</b><span>頂城派出所</span></li><li><b>012</b><span>空軍烈士公墓</span></li>
+          <li><b>013</b><span>昔日碧園新村</span></li><li><b>014</b><span>太平運動公園</span></li>
+          <li><b>015</b><span>太平宮</span></li>
+        </ol>
+        <div class="walking-route-actions">
+          <button type="button" class="button" disabled>播放語音（製作中）</button>
+          <a class="button ghost" href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">開啟 Google Maps</a>
+        </div>
+      </section>
+    </main>
+    <script src="../script.js"></script>
+    <script src="../assets/js/walking-map.js"></script>
+  </body>
+</html>
