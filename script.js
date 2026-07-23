@@ -2,7 +2,18 @@
 if (history.scrollRestoration) {
   history.scrollRestoration = 'manual';
 }
-window.scrollTo(0, 0);
+if (!window.location.hash) {
+  window.scrollTo(0, 0);
+} else {
+  window.addEventListener("DOMContentLoaded", () => {
+    const target = document.querySelector(window.location.hash);
+    if (target) {
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  });
+}
 
 const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
