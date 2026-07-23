@@ -10,7 +10,8 @@ $excludeDirs = @(
   "node_modules",
   ".preview-logs",
   ".tmp-docx-build",
-  "dist"
+  "dist",
+  "skills"
 )
 
 $textExtensions = @(
