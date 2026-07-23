@@ -1,4 +1,4 @@
-﻿docs/
+docs/
 docs/*.md
 .preview-logs/
 .tmp-docx-build/
@@ -6,3 +6,6 @@ docs/*.md
 .DS_Store
 Thumbs.db
 ~$*.md
+*.mp4
+video-production/
+
