@@ -1722,6 +1722,10 @@ h3 {
     var(--ink);
 }
 
+.record-hero--text-only {
+  grid-template-columns: 1fr;
+}
+
 .record-hero-copy {
   display: flex;
   flex-direction: column;
