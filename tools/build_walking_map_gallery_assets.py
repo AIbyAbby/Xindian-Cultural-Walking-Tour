@@ -51,7 +51,7 @@ MAPS = (
     MapAsset(
         4,
         "走讀地圖4_.png",
-        "https://www.google.com/maps/d/u/0/viewer?mid=1ebAZN9ajYrf1Gkt78_Gw1AUYe09kxXo&ll=24.9554203%2C121.5376068&z=17",
+        "https://www.google.com/maps/d/u/0/viewer?mid=1ebAZN9ajYrf1Gkt78_Gw1AUYe09kxXo&ll=24.95488903917687%2C121.54080925000004&z=16",
     ),
 )
 

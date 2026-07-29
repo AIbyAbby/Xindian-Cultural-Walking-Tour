@@ -1,10 +1,29 @@
 from pathlib import Path
+from html.parser import HTMLParser
 
 from PIL import Image
 import zxingcpp
 
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+class MapLinkParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.urls = []
+
+    def handle_starttag(self, tag, attrs):
+        attributes = dict(attrs)
+        classes = attributes.get("class", "").split()
+        if (
+            tag == "a"
+            and {"button", "primary"}.issubset(classes)
+            and attributes.get("href", "").startswith("https://www.google.com/maps/d/")
+        ):
+            self.urls.append(attributes["href"])
+
+
 EXPECTED = {
     1: (
         (3200, 1800),
@@ -20,10 +39,13 @@ EXPECTED = {
     ),
     4: (
         (3600, 1938),
-        "https://www.google.com/maps/d/u/0/viewer?mid=1ebAZN9ajYrf1Gkt78_Gw1AUYe09kxXo&ll=24.9554203%2C121.5376068&z=17",
+        "https://www.google.com/maps/d/u/0/viewer?mid=1ebAZN9ajYrf1Gkt78_Gw1AUYe09kxXo&ll=24.95488903917687%2C121.54080925000004&z=16",
     ),
 }
 
+parser = MapLinkParser()
+parser.feed((ROOT / "pages/walking-maps.html").read_text(encoding="utf-8"))
+assert parser.urls == [url for _, url in EXPECTED.values()]
 
 for number, (full_size, url) in EXPECTED.items():
     full = ROOT / f"assets/images/maps/walking-map-{number}.png"
