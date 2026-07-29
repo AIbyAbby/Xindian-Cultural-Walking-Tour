@@ -2,6 +2,7 @@
 docs/*.md
 .preview-logs/
 .tmp-docx-build/
+.worktrees/
 *.tmp
 .DS_Store
 Thumbs.db
