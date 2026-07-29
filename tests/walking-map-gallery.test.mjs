@@ -63,3 +63,23 @@ test("圖卡與 QR 有電腦和手機響應式規則", async () => {
   assert.match(css, /@media\s*\(max-width:\s*768px\)[\s\S]*?\.walking-map-card__qr img\s*\{[\s\S]*?width:\s*170px/);
   assert.match(css, /\.walking-map-lightbox/);
 });
+
+
+test("首頁提供走讀地圖入口且手機版六個按鈕同尺寸排列", async () => {
+  const html = await readFile(new URL("index.html", root), "utf8");
+  const css = await readFile(new URL("assets/css/walking-maps-home.css", root), "utf8");
+  const actions = html.match(/<div class="hero-actions">([\s\S]*?)<\/div>/)?.[1] ?? "";
+
+  assert.equal((actions.match(/<a class="button ghost/g) ?? []).length, 6);
+  assert.match(
+    actions,
+    /btn-sources[^>]*>田調記憶<\/a>[\s\S]*btn-walking-maps[^>]*href="pages\/walking-maps\.html"[^>]*>走讀地圖<\/a>/,
+  );
+  assert.match(html, /assets\/css\/walking-maps-home\.css/);
+  assert.match(css, /\.button\.ghost\.btn-walking-maps/);
+  assert.match(
+    css,
+    /@media\s*\(max-width:\s*768px\)[\s\S]*?\.hero-actions[\s\S]*?grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\)/,
+  );
+  assert.match(css, /\.hero-actions \.button\.btn-sources\s*\{[\s\S]*?grid-column:\s*auto\s*!important/);
+});
