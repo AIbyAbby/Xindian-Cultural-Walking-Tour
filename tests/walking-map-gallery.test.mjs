@@ -39,3 +39,27 @@ test("每張圖卡都有預覽圖、Google 地圖、新分頁 QR 與固定標語
   assert.equal((html.match(/掃描地圖，用腳步閱讀這座城市/g) ?? []).length, 4);
   assert.doesNotMatch(html, /下載原圖/);
 });
+
+
+test("大圖檢視器支援點擊、遮罩與 Escape 關閉", async () => {
+  const html = await readFile(pageUrl, "utf8");
+  const js = await readFile(new URL("assets/js/walking-maps.js", root), "utf8");
+
+  assert.match(html, /id="walking-map-lightbox"/);
+  assert.match(js, /showModal\(\)/);
+  assert.match(js, /event\.key === "Escape"/);
+  assert.match(js, /event\.target === lightbox/);
+  assert.match(js, /document\.body\.style\.overflow/);
+});
+
+
+test("圖卡與 QR 有電腦和手機響應式規則", async () => {
+  const html = await readFile(pageUrl, "utf8");
+  const css = await readFile(new URL("assets/css/walking-maps.css", root), "utf8");
+
+  assert.match(html, /assets\/css\/walking-maps\.css/);
+  assert.match(css, /\.walking-map-card/);
+  assert.match(css, /\.walking-map-card__qr img\s*\{[\s\S]*?width:\s*190px/);
+  assert.match(css, /@media\s*\(max-width:\s*768px\)[\s\S]*?\.walking-map-card__qr img\s*\{[\s\S]*?width:\s*170px/);
+  assert.match(css, /\.walking-map-lightbox/);
+});
