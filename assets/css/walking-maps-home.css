@@ -1,0 +1,44 @@
+.button.ghost.btn-walking-maps {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: #fff !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  letter-spacing: 0.08em;
+}
+
+.button.ghost.btn-walking-maps:hover,
+.button.ghost.btn-walking-maps:focus {
+  background: rgba(255, 255, 255, 0.3) !important;
+  border-color: #fff !important;
+  color: #fff !important;
+}
+
+@media (max-width: 768px) {
+  .hero-actions {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    width: 100% !important;
+    max-width: 420px !important;
+    margin-inline: auto !important;
+  }
+
+  .hero-actions .button {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 44px !important;
+    margin: 0 !important;
+    padding: 10px 8px !important;
+    border-radius: 8px !important;
+    font-size: 0.82rem !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  .hero-actions .button.btn-sources {
+    grid-column: auto !important;
+  }
+}
