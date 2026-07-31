@@ -3604,6 +3604,184 @@ body {
   }
 }
 
+/* Second picturebook: 195綿綿冰 */
+.picturebook-story-links {
+  width: min(100% - 32px, 820px);
+  margin: 34px auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.picturebook-story-link {
+  display: grid;
+  gap: 6px;
+  padding: 22px;
+  color: var(--ink);
+  text-decoration: none;
+  text-align: left;
+  background: rgba(255, 252, 245, 0.92);
+  border: 1px solid rgba(45, 119, 131, 0.2);
+  border-radius: var(--radius);
+  box-shadow: 0 16px 38px rgba(25, 40, 36, 0.09);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.picturebook-story-link:hover,
+.picturebook-story-link:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 44px rgba(25, 40, 36, 0.15);
+  outline: 3px solid rgba(214, 161, 75, 0.45);
+  outline-offset: 3px;
+}
+
+.picturebook-story-link span,
+.picturebook-story-link small {
+  color: var(--muted);
+  font-family: var(--font-sans);
+}
+
+.picturebook-story-link strong {
+  font-size: 1.15rem;
+  line-height: 1.45;
+}
+
+.picturebook-story-link--mianmian {
+  background: linear-gradient(145deg, #fff9e9, #f5ead2);
+  border-color: rgba(182, 120, 50, 0.32);
+}
+
+.mianmian-reader-layout {
+  width: min(100% - 32px, 1120px);
+  margin: 0 auto;
+  padding: 46px 0 72px;
+}
+
+.mianmian-reader {
+  touch-action: pan-y;
+  outline: none;
+}
+
+.mianmian-reader:focus-visible {
+  outline: 3px solid rgba(214, 161, 75, 0.55);
+  outline-offset: 8px;
+  border-radius: var(--radius);
+}
+
+.mianmian-reader-stage {
+  aspect-ratio: 1376 / 768;
+  overflow: hidden;
+  background: #f5eddd;
+  border: 1px solid rgba(45, 119, 131, 0.18);
+  border-radius: var(--radius);
+  box-shadow: 0 24px 58px rgba(25, 40, 36, 0.14);
+}
+
+.mianmian-reader-stage img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.mianmian-reader-controls {
+  display: grid;
+  grid-template-columns: auto minmax(120px, 280px) auto;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 24px;
+}
+
+.mianmian-reader-button {
+  min-height: 46px;
+  padding: 10px 18px;
+  border: 1px solid rgba(37, 53, 47, 0.2);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  font: 700 0.95rem/1 var(--font-sans);
+  cursor: pointer;
+}
+
+.mianmian-reader-button:hover:not(:disabled),
+.mianmian-reader-button:focus-visible {
+  color: #fff;
+  background: var(--river);
+  outline: 3px solid rgba(45, 119, 131, 0.25);
+  outline-offset: 3px;
+}
+
+.mianmian-reader-button:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+.mianmian-reader-position {
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+  text-align: center;
+  font: 700 0.9rem/1 var(--font-sans);
+}
+
+.mianmian-reader-progress {
+  height: 6px;
+  overflow: hidden;
+  background: rgba(37, 53, 47, 0.1);
+  border-radius: 999px;
+}
+
+.mianmian-reader-progress span {
+  display: block;
+  width: 6.67%;
+  height: 100%;
+  background: var(--gold);
+  border-radius: inherit;
+  transition: width 0.25s ease;
+}
+
+.mianmian-reader-home {
+  width: fit-content;
+  margin: 28px auto 0;
+}
+
+.mianmian-reader-home[hidden] {
+  display: none;
+}
+
+.mianmian-reader-hint {
+  margin: 18px 0 0;
+  color: var(--muted);
+  text-align: center;
+  font-family: var(--font-sans);
+}
+
+@media screen and (max-width: 640px) {
+  .picturebook-story-links {
+    grid-template-columns: 1fr;
+  }
+
+  .mianmian-reader-layout {
+    width: min(100% - 18px, 1120px);
+    padding-top: 24px;
+  }
+
+  .mianmian-reader-controls {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .mianmian-reader-position {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .mianmian-reader-button {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .record-page .record-layout {
     width: min(100% - 22px, 720px) !important;
