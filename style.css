@@ -477,6 +477,283 @@ h3 {
   line-height: 2;
 }
 
+/* 田調記憶：致謝與計畫資訊 */
+.acknowledgements {
+  width: 100%;
+  padding: 0 20px 100px;
+  overflow-x: clip;
+  color: #1a3a5c;
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+}
+
+.acknowledgements,
+.acknowledgements * {
+  box-sizing: border-box;
+}
+
+.acknowledgements-intro {
+  width: min(100%, 900px);
+  margin: 0 auto 40px;
+  padding: 46px 54px;
+  border-radius: var(--radius);
+  background: rgba(251, 248, 240, 0.96);
+  box-shadow: var(--shadow);
+}
+
+.acknowledgements-kicker {
+  margin: 0 0 12px;
+  color: #986044;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.acknowledgements-intro h2 {
+  margin: 0 0 24px;
+  color: #b04432;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.acknowledgements-copy {
+  color: #536f7a;
+  font-family: var(--font-serif);
+  font-size: clamp(1.02rem, 1.7vw, 1.14rem);
+  line-height: 1.95;
+}
+
+.acknowledgements-copy p {
+  margin: 0;
+}
+
+.acknowledgements-copy p + p {
+  margin-top: 10px;
+}
+
+.ack-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+.ack-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: min(100%, 900px);
+  min-height: 600px;
+  aspect-ratio: 1024 / 683;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.ack-watercolor {
+  position: absolute;
+  z-index: -1;
+  inset: -42px;
+  opacity: 0.85;
+  filter: blur(28px);
+  background:
+    radial-gradient(circle at 8% 55%, #bfe3d8 0%, transparent 40%),
+    radial-gradient(circle at 20% 75%, #a9d9dd 0%, transparent 45%),
+    radial-gradient(circle at 55% 60%, #cfeadf 0%, transparent 35%),
+    radial-gradient(circle at 70% 40%, #a6d6d2 0%, transparent 40%),
+    radial-gradient(circle at 85% 65%, #bfe6da 0%, transparent 45%),
+    radial-gradient(circle at 45% 85%, #c8e8e2 0%, transparent 40%),
+    radial-gradient(circle at 15% 20%, #d5eee8 0%, transparent 35%);
+}
+
+.ack-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 100%;
+  padding: 56px 64px 34px;
+  text-align: center;
+}
+
+.project-card .ack-content {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  align-items: stretch;
+}
+
+.thanks-title,
+.project-title {
+  color: #1a3a5c;
+  font-weight: 800;
+  text-align: center;
+}
+
+.thanks-title {
+  margin: 0 0 24px;
+  font-size: clamp(34px, 4vw, 40px);
+  line-height: 1.4;
+  letter-spacing: 2px;
+}
+
+.thanks-intro {
+  max-width: 720px;
+  margin: 0 auto 28px;
+  font-size: clamp(13px, 1.6vw, 16px);
+  line-height: 1.9;
+}
+
+.thanks-intro-mobile {
+  display: none;
+}
+
+.thanks-list {
+  display: grid;
+  grid-template-columns: max-content 1em max-content;
+  justify-content: center;
+  gap: 9px 0;
+  margin: 0;
+  padding: 0;
+  font-size: clamp(14px, 1.75vw, 18px);
+  line-height: 1.65;
+  list-style: none;
+  text-align: left;
+}
+
+.thanks-list li {
+  display: contents;
+}
+
+.person-name {
+  font-weight: 700;
+}
+
+.person-separator,
+.person-role,
+.ack-note {
+  color: #2c5270;
+  font-weight: 400;
+}
+
+.person-separator {
+  text-align: center;
+}
+
+.person-role {
+  font-size: 0.9em;
+}
+
+.ack-note {
+  margin: 10px 0 0;
+  font-size: clamp(11px, 1.2vw, 13px);
+  line-height: 1.5;
+}
+
+.ack-footer {
+  width: 100%;
+  margin-top: 32px;
+  font-size: clamp(12px, 1.4vw, 15px);
+  font-weight: 500;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.project-title {
+  margin: 0;
+  font-size: clamp(28px, 3.4vw, 34px);
+  line-height: 1.5;
+  letter-spacing: 1px;
+  overflow-wrap: anywhere;
+}
+
+.project-title::before { content: "《"; }
+.project-title::after { content: "》"; }
+
+.project-center {
+  align-self: center;
+  width: 100%;
+}
+
+.info-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: max-content;
+  max-width: 100%;
+  margin: 0 auto;
+  font-size: clamp(16px, 1.9vw, 20px);
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+.info-row {
+  max-width: 100%;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.team-row { margin-top: 12px; }
+.team-continuation-row,
+.project-note { padding-inline-start: 3em; }
+.team-heading-mobile { display: none; }
+
+@media (max-width: 640px) {
+  .acknowledgements { padding: 0 12px 72px; }
+  .acknowledgements-intro { margin-bottom: 28px; padding: 34px 22px; }
+  .acknowledgements-kicker { font-size: 0.92rem; }
+  .acknowledgements-intro h2 { font-size: clamp(1.85rem, 9vw, 2.35rem); }
+  .ack-stack { gap: 28px; }
+  .ack-card { min-height: 0; aspect-ratio: auto; }
+  .ack-content { min-height: 0; padding: 44px 20px 28px; }
+  .thanks-card .ack-content { padding-right: 12px; padding-left: 12px; }
+  .thanks-title { font-size: clamp(30px, 9vw, 36px); }
+  .thanks-intro { margin-bottom: 24px; line-height: 1.85; }
+  .thanks-intro-desktop { display: none; }
+  .thanks-intro-mobile { display: block; max-width: none; font-size: clamp(11px, 3.3vw, 13px); }
+  .mobile-intro-line { display: block; white-space: nowrap; }
+  .thanks-list {
+    grid-template-columns: minmax(0, 18.5rem);
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    margin-inline: auto;
+    font-size: 15px;
+  }
+  .thanks-list li { display: block; min-width: 0; }
+  .person-name,
+  .person-role { display: block; overflow-wrap: anywhere; text-align: left; }
+  .person-separator { display: none; }
+  .person-role { margin-top: 1px; font-size: 13px; }
+  .thanks-note { width: min(100%, 18.5rem); margin-inline: auto; text-align: left; }
+  .project-title { font-size: clamp(22px, 7.2vw, 28px); letter-spacing: 0; }
+  .project-title::before,
+  .project-title::after { content: none; }
+  .project-title-main,
+  .project-title-sub { display: block; }
+  .project-title-main { font-size: clamp(24px, 7.2vw, 28px); line-height: 1.35; }
+  .project-title-separator { display: none; }
+  .project-title-sub { margin-top: 8px; font-size: clamp(16px, 4.9vw, 19px); font-weight: 500; line-height: 1.45; }
+  .project-center { margin-block: 30px; }
+  .info-grid { font-size: clamp(13px, 4.2vw, 16px); line-height: 1.75; }
+  .team-heading-mobile { display: block; margin-top: 11px; text-align: left; }
+  .team-label { display: none; }
+  .team-row { margin-top: 0; }
+  .team-continuation-row,
+  .project-note { padding-inline-start: 0; }
+  .ack-footer { margin-top: 38px; }
+}
+
+@media (max-width: 360px) {
+  .acknowledgements { padding-inline: 8px; }
+  .acknowledgements-intro { padding-inline: 18px; }
+  .ack-content { padding-inline: 16px; }
+  .info-grid { font-size: 13px; }
+}
+
 .picturebook-title-row {
   display: flex;
   align-items: flex-start;
