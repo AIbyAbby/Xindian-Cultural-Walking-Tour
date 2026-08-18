@@ -20,7 +20,7 @@ test("田調記憶內容下方依序呈現特別感謝與計畫資訊", async ()
   assert.match(sources, /指導單位：新北市政府文化局/);
   assert.match(sources, /團隊：<\/span><span[^>]*>王淑美、吳培珍、侯淑敏、陳玉玲/);
   assert.match(sources, /id="stacked-ack-draft"/);
-  assert.match(sources, /網頁設計：陳翠碧/);
+  assert.match(sources, /網站規劃與設計：陳翠碧/);
   assert.doesNotMatch(sources, /陳翠碧、張性娟/);
   assert.match(sources, /王淑美、吳培珍、侯淑敏、陳玉玲[\s\S]*張性娟、蔡宏哲、賴碧珠/);
 });
