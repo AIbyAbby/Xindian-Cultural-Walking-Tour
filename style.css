@@ -771,6 +771,216 @@ h3 {
   .info-grid { font-size: 13px; }
 }
 
+/* 發想定稿 v18：兩張水彩成品使用獨立作用域，避免網站樣式干擾。 */
+#stacked-ack-draft {
+  width: 100%;
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+}
+
+#stacked-ack-draft * { box-sizing: border-box; }
+#stacked-ack-draft .ack-stack { gap: 40px; }
+
+#stacked-ack-draft .ack-card {
+  width: min(100%, 900px);
+  min-height: 600px;
+  aspect-ratio: 1024 / 683;
+  color: #1a3a5c;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+#stacked-ack-draft .ack-watercolor {
+  inset: -42px;
+  opacity: 0.85;
+  filter: blur(28px);
+}
+
+#stacked-ack-draft .ack-content {
+  min-height: 100%;
+  padding: 56px 64px 34px;
+  text-align: center;
+}
+
+#stacked-ack-draft .project-card .ack-content {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  align-items: stretch;
+}
+
+#stacked-ack-draft .project-card .project-title,
+#stacked-ack-draft .project-card .ack-footer { margin: 0; }
+
+#stacked-ack-draft .project-title {
+  color: #1a3a5c;
+  font-size: clamp(28px, 3.4vw, 34px);
+  font-weight: 800;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
+#stacked-ack-draft .project-title::before { content: "《"; }
+#stacked-ack-draft .project-title::after { content: "》"; }
+
+#stacked-ack-draft .project-center {
+  align-self: center;
+  width: 100%;
+}
+
+#stacked-ack-draft .info-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: max-content;
+  max-width: 100%;
+  margin: 0 auto;
+  color: #1a3a5c;
+  font-size: clamp(16px, 1.9vw, 20px);
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+#stacked-ack-draft .info-row {
+  max-width: 100%;
+  white-space: nowrap;
+  text-align: left;
+}
+
+#stacked-ack-draft .team-grid {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  align-items: baseline;
+  width: 100%;
+  margin-top: 12px;
+}
+
+#stacked-ack-draft .team-grid .team-line,
+#stacked-ack-draft .team-grid .project-note {
+  min-width: 0;
+  white-space: nowrap;
+  text-align: left;
+}
+
+#stacked-ack-draft .team-grid .project-note {
+  margin: 5px 0 0;
+  color: #3a5f7d;
+  font-size: clamp(11px, 1.2vw, 13px);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+#stacked-ack-draft .team-heading-mobile { display: none; }
+
+#stacked-ack-draft .ack-footer {
+  width: 100%;
+  margin-top: 44px;
+  color: #1a3a5c;
+  font-size: clamp(12px, 1.4vw, 15px);
+  font-weight: 500;
+  line-height: 1.8;
+  text-align: center;
+}
+
+#stacked-ack-draft .thanks-title {
+  margin: 0 0 24px;
+  color: #1a3a5c;
+  font-size: clamp(34px, 4vw, 40px);
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+#stacked-ack-draft .thanks-intro {
+  max-width: 720px;
+  margin: 0 auto 28px;
+  color: #1a3a5c;
+  font-size: clamp(13px, 1.6vw, 16px);
+  font-weight: 400;
+  line-height: 1.9;
+  text-align: center;
+}
+
+#stacked-ack-draft .thanks-intro-mobile { display: none; }
+
+#stacked-ack-draft .thanks-list {
+  display: grid;
+  grid-template-columns: max-content 1em max-content;
+  align-items: baseline;
+  justify-content: center;
+  gap: 9px 0;
+  margin: 0;
+  padding: 0;
+  color: #1a3a5c;
+  font-size: clamp(14px, 1.75vw, 18px);
+  font-weight: 500;
+  line-height: 1.65;
+  list-style: none;
+  text-align: left;
+}
+
+#stacked-ack-draft .thanks-list li { display: contents; }
+#stacked-ack-draft .person-name { font-weight: 700; text-align: left; }
+#stacked-ack-draft .person-separator { color: #2c5270; font-weight: 400; text-align: center; }
+#stacked-ack-draft .person-role { color: #2c5270; font-size: 0.9em; font-weight: 400; text-align: left; }
+
+#stacked-ack-draft .thanks-note {
+  margin: 10px 0 0;
+  color: #3a5f7d;
+  font-size: clamp(11px, 1.2vw, 13px);
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+}
+
+#stacked-ack-draft .thanks-footer { margin-top: 32px; }
+
+@media (max-width: 640px) {
+  #stacked-ack-draft .ack-stack { gap: 28px; }
+  #stacked-ack-draft .ack-card { min-height: 0; aspect-ratio: auto; }
+  #stacked-ack-draft .ack-content { min-height: 0; padding: 44px 20px 28px; }
+  #stacked-ack-draft .project-title { margin-bottom: 30px; font-size: clamp(22px, 7.2vw, 28px); }
+  #stacked-ack-draft .project-title::before,
+  #stacked-ack-draft .project-title::after { content: none; }
+  #stacked-ack-draft .project-title-main,
+  #stacked-ack-draft .project-title-sub { display: block; }
+  #stacked-ack-draft .project-title-main { font-size: clamp(24px, 7.2vw, 28px); font-weight: 800; line-height: 1.35; }
+  #stacked-ack-draft .project-title-separator { display: none; }
+  #stacked-ack-draft .project-title-sub { margin-top: 8px; font-size: clamp(16px, 4.9vw, 19px); font-weight: 500; line-height: 1.45; letter-spacing: 0.5px; }
+  #stacked-ack-draft .info-grid { font-size: clamp(13px, 4.2vw, 16px); line-height: 1.75; }
+  #stacked-ack-draft .team-heading-mobile { display: block; margin-top: 11px; text-align: left; }
+  #stacked-ack-draft .team-grid { display: block; margin-top: 0; }
+  #stacked-ack-draft .team-label,
+  #stacked-ack-draft .team-grid-spacer { display: none; }
+  #stacked-ack-draft .team-grid .team-line { display: block; text-align: left; }
+  #stacked-ack-draft .team-grid .project-note { white-space: normal; }
+  #stacked-ack-draft .project-center { margin-block: 30px; }
+  #stacked-ack-draft .ack-footer { margin-top: 38px; }
+  #stacked-ack-draft .thanks-title { font-size: clamp(30px, 9vw, 36px); }
+  #stacked-ack-draft .thanks-card .ack-content { padding-right: 14px; padding-left: 14px; }
+  #stacked-ack-draft .thanks-intro { margin-bottom: 24px; line-height: 1.85; }
+  #stacked-ack-draft .thanks-intro-desktop { display: none; }
+  #stacked-ack-draft .thanks-intro-mobile { display: block; max-width: none; font-size: clamp(11px, 3.3vw, 13px); }
+  #stacked-ack-draft .mobile-intro-line { display: block; white-space: nowrap; }
+  #stacked-ack-draft .thanks-list { grid-template-columns: minmax(0, 18.5rem); align-items: start; gap: 12px; width: 100%; margin-inline: auto; font-size: 15px; }
+  #stacked-ack-draft .thanks-list li { display: block; min-width: 0; text-align: left; }
+  #stacked-ack-draft .person-name,
+  #stacked-ack-draft .person-role { display: block; overflow-wrap: anywhere; text-align: left; }
+  #stacked-ack-draft .person-separator { display: none; }
+  #stacked-ack-draft .person-role { margin-top: 1px; font-size: 13px; }
+  #stacked-ack-draft .thanks-footer { margin-top: 30px; }
+  #stacked-ack-draft .thanks-note { width: min(100%, 18.5rem); margin-right: auto; margin-left: auto; text-align: left; }
+}
+
+@media (max-width: 360px) {
+  #stacked-ack-draft .ack-content { padding-right: 16px; padding-left: 16px; }
+  #stacked-ack-draft .project-title { letter-spacing: 0; word-break: break-all; }
+  #stacked-ack-draft .info-grid { font-size: 13px; }
+  #stacked-ack-draft .thanks-card .ack-content { padding-right: 12px; padding-left: 12px; }
+}
+
 .picturebook-title-row {
   display: flex;
   align-items: flex-start;
