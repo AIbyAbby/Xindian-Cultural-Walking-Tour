@@ -19,6 +19,10 @@ test("田調記憶內容下方依序呈現特別感謝與計畫資訊", async ()
   assert.match(sources, /高玉惠女士[\s\S]*翁東源先生[\s\S]*張淑芬女士[\s\S]*張豐鏡先生[\s\S]*郭儒鈞女士[\s\S]*陳啟川先生/);
   assert.match(sources, /指導單位：新北市政府文化局/);
   assert.match(sources, /團隊：<\/span><span[^>]*>王淑美、吳培珍、侯淑敏、陳玉玲/);
+  assert.match(
+    sources,
+    /class="team-grid"[\s\S]*class="team-line">王淑美[\s\S]*class="team-grid-spacer"[\s\S]*class="team-line">陳翠碧/,
+  );
 });
 
 test("手機三行說明與桌面、手機標題版本均保留", async () => {
@@ -40,4 +44,5 @@ test("手機三行說明與桌面、手機標題版本均保留", async () => {
   assert.match(css, /@media\s*\(max-width:\s*640px\)[\s\S]*\.thanks-intro-desktop\s*\{[\s\S]*display:\s*none/);
   assert.match(css, /@media\s*\(max-width:\s*640px\)[\s\S]*\.mobile-intro-line\s*\{[\s\S]*white-space:\s*nowrap/);
   assert.match(css, /@media\s*\(max-width:\s*640px\)[\s\S]*\.project-title-separator\s*\{[\s\S]*display:\s*none/);
+  assert.match(css, /\.team-grid\s*\{[\s\S]*grid-template-columns:\s*max-content\s+minmax\(0,\s*1fr\)/);
 });
