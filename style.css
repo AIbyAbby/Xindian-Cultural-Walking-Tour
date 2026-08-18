@@ -2073,8 +2073,15 @@ h3 {
   color: white;
 }
 
+.archive-hero .hero-content {
+  max-width: min(920px, calc(100% - 40px));
+}
+
 .archive-hero h1 {
-  max-width: 920px;
+  max-width: none;
+  font-size: clamp(2.35rem, 9vw, 7.4rem);
+  white-space: nowrap;
+  text-wrap: nowrap;
 }
 
 .story-intro-section {
